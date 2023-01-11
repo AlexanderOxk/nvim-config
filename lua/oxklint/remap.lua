@@ -16,6 +16,7 @@ vim.g.mapleader = " "
 
 -- File navigation
 keymap("n", "<leader>n", vim.cmd.Ex)
+keymap("n", "<leader>|", vim.cmd.Vex)
 
 -- Avoid accidental quiting
 vim.cmd('cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == "q" ? "close" : "q"')
