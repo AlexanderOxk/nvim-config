@@ -15,11 +15,11 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- File navigation
-keymap("n", "<leader>pv", vim.cmd.Ex)
+keymap("n", "<leader>n", vim.cmd.Ex)
 
 -- Avoid accidental quiting
-vim.cmd('cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == "q" ? "bd" : "q"')
-vim.cmd('cnoreabbrev <expr> wq getcmdtype() == ":" && getcmdline() == "wq" ? "w <bar> bd" : "wq"')
+vim.cmd('cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == "q" ? "close" : "q"')
+vim.cmd('cnoreabbrev <expr> wq getcmdtype() == ":" && getcmdline() == "wq" ? "w <bar> close" : "wq"')
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
