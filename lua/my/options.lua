@@ -26,3 +26,5 @@ vim.o.splitright = true
 vim.o.tabstop = 2
 vim.o.termguicolors = true
 vim.o.undofile = true
+vim.opt.list = true
+vim.opt.listchars:append('trail:•')

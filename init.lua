@@ -34,6 +34,19 @@ require("lazy").setup({
     'lewis6991/gitsigns.nvim',
   },
   {
+    -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = false,
+        theme = 'onedark',
+        component_separators = '|',
+        section_separators = '',
+      },
+    },
+  },
+  {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -58,8 +71,20 @@ require("lazy").setup({
       },
     },
   },
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help ibl`
+    main = 'ibl',
+    opts = {},
+  },
+  { 'folke/which-key.nvim', opts = {} },
 })
 
 -- Configure plugins
+require("onedark").setup {style = 'darker'}
+require("onedark").load()
 require("plugin_config")
+require("ibl").setup()
 
