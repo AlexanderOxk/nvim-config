@@ -30,8 +30,12 @@ require("lazy").setup({
     end,
   },
   {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
+    -- Adds git related signs to the gutter, as well as utilities
     'lewis6991/gitsigns.nvim',
+  },
+  {
+    -- Adds diffing capabilities for git
+    'sindrets/diffview.nvim',
   },
   {
     -- Set lualine as statusline
