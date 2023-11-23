@@ -29,18 +29,27 @@ require("lazy").setup({
       vim.cmd.colorscheme 'onedark'
     end,
   },
+  { 'lewis6991/gitsigns.nvim' }, -- Adds git related signs to the gutter, as well as utilities
+  { 'sindrets/diffview.nvim' }, -- Adds diffing capabilities for git
   {
-    -- Adds git related signs to the gutter, as well as utilities
-    'lewis6991/gitsigns.nvim',
-  },
-  {
-    -- Adds diffing capabilities for git
-    'sindrets/diffview.nvim',
+    -- Autosave
+    'pocco81/auto-save.nvim',
+    config = function()
+      require('auto-save').setup {
+        execution_message = {
+          message = function() -- message to print on save
+            return ("Saved at " .. vim.fn.strftime("%H:%M:%S"))
+          end,
+          dim = 0.5, -- dim the color of `message`
+          cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea
+        },
+        debounce_delay = 800,
+      }
+    end,
   },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
