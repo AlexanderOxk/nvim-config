@@ -1,6 +1,5 @@
 vim.o.background = "dark"
 vim.o.colorcolumn = "120"
-vim.o.completeopt = "menuone,longest"
 vim.o.cursorline = true
 vim.o.encoding = "utf-8"
 vim.o.expandtab = true
