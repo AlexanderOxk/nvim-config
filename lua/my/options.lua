@@ -27,3 +27,4 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.opt.list = true
 vim.opt.listchars:append('trail:•')
+vim.o.syntax = "on"
