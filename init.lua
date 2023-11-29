@@ -76,7 +76,6 @@ require("lazy").setup({
       },
     },
   },
-  { 'HiPhish/rainbow-delimiters.nvim' },
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
