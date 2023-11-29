@@ -20,15 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Specify plugins
 require("lazy").setup({
-  {
-    -- Colorscheme
-    'navarasu/onedark.nvim',
-    lazy=false,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  { 'rose-pine/neovim',       name = 'rose-pine' },
   { 'lewis6991/gitsigns.nvim' },
   { 'sindrets/diffview.nvim' },
   {
@@ -40,7 +32,7 @@ require("lazy").setup({
           message = function() -- message to print on save
             return ("Saved at " .. vim.fn.strftime("%H:%M:%S"))
           end,
-          dim = 0.5, -- dim the color of `message`
+          dim = 0.5,                -- dim the color of `message`
           cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea
         },
         debounce_delay = 800,
@@ -53,7 +45,7 @@ require("lazy").setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
       },
@@ -106,7 +98,7 @@ require("lazy").setup({
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp', -- LSP completion
-      'hrsh7th/cmp-buffer', -- Buffer completion
+      'hrsh7th/cmp-buffer',   -- Buffer completion
       'hrsh7th/cmp-nvim-lua', -- neovim lua completion
 
       -- Snippets
@@ -122,13 +114,10 @@ require("lazy").setup({
     main = 'ibl',
     opts = {},
   },
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',           opts = {} },
 })
 
 -- Configure plugins
-require("onedark").setup {style = 'darker'}
-require("onedark").load()
 require("plugin_config")
 require("lsp_config")
 require("ibl").setup()
-

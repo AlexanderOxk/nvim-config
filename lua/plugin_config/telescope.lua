@@ -1,4 +1,3 @@
-
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -43,7 +42,7 @@ local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
     require('telescope.builtin').live_grep({
-      search_dirs = {git_root},
+      search_dirs = { git_root },
     })
   end
 end
@@ -84,4 +83,3 @@ vim.keymap.set('n', '<leader>pg', ':LiveGrepGitRoot<cr>', { desc = '[pg] Search 
 vim.keymap.set('n', '<leader>pd', require('telescope.builtin').diagnostics, { desc = '[pd] Search diagnostics' })
 vim.keymap.set('n', '<leader>pr', require('telescope.builtin').resume, { desc = '[pr] Search resume' })
 --vim.keymap.set('n', '<leader>pg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-

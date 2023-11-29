@@ -1,4 +1,3 @@
-
 require("gitsigns").setup {
   signs = {
     add = { text = '+' },
@@ -21,7 +20,8 @@ require("gitsigns").setup {
     vim.keymap.set('n', '<leader>hs', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
     vim.keymap.set('n', '<leader>hr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'Reset git hunk' })
     vim.keymap.set('n', '<leader>hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Next git hunk' })
-    vim.keymap.set('n', '<leader>gb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'Show git blame for line' })
+    vim.keymap.set('n', '<leader>gb', require('gitsigns').blame_line,
+      { buffer = bufnr, desc = 'Show git blame for line' })
 
     -- don't override the built-in and fugitive keymaps
     -- local gs = package.loaded.gitsigns
