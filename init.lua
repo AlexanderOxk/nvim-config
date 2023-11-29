@@ -113,7 +113,13 @@ require("lazy").setup({
     main = 'ibl',
     opts = {},
   },
-  { 'folke/which-key.nvim',           opts = {} },
+  {
+    'tzachar/local-highlight.nvim',
+    config = function()
+      require('local-highlight').setup()
+    end
+  },
+  { 'folke/which-key.nvim', opts = {} },
 })
 
 -- Configure plugins

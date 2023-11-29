@@ -28,3 +28,4 @@ vim.o.undofile = true
 vim.opt.list = true
 vim.opt.listchars:append('trail:•')
 vim.o.syntax = "on"
+vim.o.updatetime = 300
