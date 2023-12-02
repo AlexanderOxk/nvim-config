@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Specify plugins
 require("lazy").setup({
-  { 'rose-pine/neovim',       name = 'rose-pine' },
+  { 'marko-cerovac/material.nvim' },
   { 'lewis6991/gitsigns.nvim' },
   { 'sindrets/diffview.nvim' },
   {
@@ -45,7 +45,7 @@ require("lazy").setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'material',
         component_separators = '|',
         section_separators = '',
       },
@@ -124,5 +124,6 @@ require("lazy").setup({
 
 -- Configure plugins
 require("plugin_config")
+vim.cmd 'colorscheme material'
 require("lsp_config")
 require("ibl").setup()
