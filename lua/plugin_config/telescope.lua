@@ -50,8 +50,8 @@ end
 --
 -- Custom function to smart-select git_files or find_files
 local function find_git_files_or_files()
-  local git_root = find_git_root()
-  if git_root then
+  local _, ret, _ = require("telescope.utils").get_os_command_output({ 'git', 'rev-parse', '--is-inside-work-tree' })
+  if ret == 0 then
     require('telescope.builtin').git_files({
       show_untracked = true,
     })
