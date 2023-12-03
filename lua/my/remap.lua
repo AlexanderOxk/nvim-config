@@ -45,3 +45,6 @@ keymap("v", "p", '"_dP', opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Center on cursor for G
+keymap("n", "G", "Gzz", opts)
