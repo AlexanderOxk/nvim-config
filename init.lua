@@ -22,7 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { 'marko-cerovac/material.nvim' },
   { 'lewis6991/gitsigns.nvim' },
-  { 'sindrets/diffview.nvim' },
+  { 'tpope/vim-fugitive' },
   {
     -- Autosave
     'pocco81/auto-save.nvim',
