@@ -46,5 +46,10 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Center on cursor for G
+-- Center on cursor for G, n, and N
 keymap("n", "G", "Gzz", opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+
+-- Substitute word under cursor
+keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", opts)

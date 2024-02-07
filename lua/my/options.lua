@@ -29,3 +29,4 @@ vim.opt.list = true
 vim.opt.listchars:append('trail:•')
 vim.o.syntax = "on"
 vim.o.updatetime = 300
+vim.g.netrw_bufsettings = 'noma nomod rnu nowrap ro nobl'
