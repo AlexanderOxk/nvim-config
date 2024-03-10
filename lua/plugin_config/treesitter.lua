@@ -1,3 +1,13 @@
+local parser_configs = require'nvim-treesitter.parsers'.get_parser_configs()
+parser_configs["verilog"] = {
+  install_info = {
+    url = "~/.config/nvim/submodules/tree-sitter-verilog",
+    files = {'src/parser.c'},
+    branch = 'master',
+  },
+  filetype = {"sv", "v", "svh", "vh"},
+}
+
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = {
@@ -16,9 +26,9 @@ require 'nvim-treesitter.configs'.setup {
     "python",
     "query",
     "rust",
+    "verilog",
     "vim",
     "vimdoc",
-    "verilog",
     "xml",
     "yaml",
   },
