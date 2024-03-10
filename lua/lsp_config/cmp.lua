@@ -44,7 +44,7 @@ cmp.setup {
     { name = 'luasnip' },
     {
       name = 'buffer',
-      keyword_length = 4,
+      keyword_length = 3,
       option = {
         get_bufnrs = function()
           local bufs = {}

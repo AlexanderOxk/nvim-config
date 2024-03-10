@@ -20,7 +20,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Specify plugins
 require("lazy").setup({
-  { 'marko-cerovac/material.nvim' },
+  { 'marko-cerovac/material.nvim',
+    lazy = false,
+    priority = 10000,
+  },
   { 'lewis6991/gitsigns.nvim' },
   { 'tpope/vim-fugitive' },
   {

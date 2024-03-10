@@ -11,6 +11,14 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  local vmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+  end
+
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -38,6 +46,7 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
   nmap('<leader>f', ':Format<cr>', 'Format document')
+  vmap('<leader>f', ':Format<cr>', 'Format document')
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order
@@ -55,7 +64,10 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   bashls = {},
-  clangd = {},
+  clangd = {
+    "clangd",
+    "--header-insertion=never"
+  },
   pyright = {},
   rust_analyzer = {},
   lua_ls = {
