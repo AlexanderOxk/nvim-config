@@ -70,6 +70,9 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  cmake = {
+    filetypes = {"cmake", "CMakeLists.txt"},
+  },
 }
 
 -- Setup neovim lua configuration
