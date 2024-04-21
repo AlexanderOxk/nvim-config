@@ -1,3 +1,6 @@
 [submodule "submodules/tree-sitter-verilog"]
 	path = submodules/tree-sitter-verilog
 	url = https://github.com/AlexanderOxk/tree-sitter-verilog
+[submodule "submodules/friendly-snippets"]
+	path = submodules/friendly-snippets
+	url = https://github.com/AlexanderOxk/friendly-snippets

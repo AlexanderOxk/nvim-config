@@ -106,7 +106,6 @@ require("lazy").setup({
       -- Snippets
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets',
     },
   },
   {
@@ -130,3 +129,4 @@ require("plugin_config")
 vim.cmd 'colorscheme material'
 require("lsp_config")
 require("ibl").setup()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/submodules/friendly-snippets" } })
