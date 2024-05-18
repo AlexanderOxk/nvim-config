@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- File navigation
-keymap("n", "<leader>n", vim.cmd.Ex)
+keymap("n", "<leader>n", "<CMD>Oil<CR>", { desc = "Open parent directory"})
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -5<CR>", opts)

@@ -109,6 +109,10 @@ require("lazy").setup({
     },
   },
   {
+    'stevearc/oil.nvim',
+    opts = {},
+  },
+  {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- See `:help ibl`
@@ -128,5 +132,6 @@ require("lazy").setup({
 require("plugin_config")
 vim.cmd 'colorscheme material'
 require("lsp_config")
+require("oil").setup()
 require("ibl").setup()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/submodules/friendly-snippets" } })
