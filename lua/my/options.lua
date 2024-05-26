@@ -4,6 +4,7 @@ vim.o.cursorline = true
 vim.o.encoding = "utf-8"
 vim.o.expandtab = true
 vim.o.incsearch = true
+vim.o.smartcase = true;
 vim.o.mouse = "a"
 vim.o.backup = false
 vim.o.errorbells = false

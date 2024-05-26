@@ -24,26 +24,16 @@ require("lazy").setup({
     lazy = false,
     priority = 10000,
   },
+  {
+    'stevearc/oil.nvim',
+    lazy = false,
+    priority = 10000,
+    opts = {},
+  },
   { 'lewis6991/gitsigns.nvim' },
   { 'tpope/vim-fugitive' },
+  { 'pocco81/auto-save.nvim' },
   {
-    -- Autosave
-    'pocco81/auto-save.nvim',
-    config = function()
-      require('auto-save').setup {
-        execution_message = {
-          message = function() -- message to print on save
-            return ("Saved at " .. vim.fn.strftime("%H:%M:%S"))
-          end,
-          dim = 0.5,                -- dim the color of `message`
-          cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea
-        },
-        debounce_delay = 800,
-      }
-    end,
-  },
-  {
-    -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
@@ -107,10 +97,6 @@ require("lazy").setup({
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
     },
-  },
-  {
-    'stevearc/oil.nvim',
-    opts = {},
   },
   {
     -- Add indentation guides even on blank lines
