@@ -17,10 +17,11 @@ require("gitsigns").setup {
   current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
 
   on_attach = function(bufnr)
-    vim.keymap.set('n', '<leader>hs', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
-    vim.keymap.set('n', '<leader>hr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'Reset git hunk' })
-    vim.keymap.set('n', '<leader>hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Next git hunk' })
-    vim.keymap.set('n', '<leader>gb', require('gitsigns').blame_line,
+    vim.keymap.set('n', 'gs', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+    vim.keymap.set('n', '<leader>gr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'Reset git hunk' })
+    vim.keymap.set('n', ']]', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Next git hunk' })
+    vim.keymap.set('n', '[[', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Previous git hunk' })
+    vim.keymap.set('n', 'gb', require('gitsigns').blame_line,
       { buffer = bufnr, desc = 'Show git blame for line' })
 
     -- don't override the built-in and fugitive keymaps
