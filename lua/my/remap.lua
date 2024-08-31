@@ -1,4 +1,3 @@
-
 local keymap = vim.keymap.set
 local opts = { silent = true }
 
@@ -15,7 +14,10 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- File navigation
-keymap("n", "<leader>n", "<CMD>Oil<CR>", { desc = "Open parent directory"})
+keymap("n", "<leader>n", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Undo tree
+keymap("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Open undo tree" })
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -5<CR>", opts)

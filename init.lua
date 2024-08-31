@@ -70,6 +70,7 @@ require("lazy").setup({
       },
     },
   },
+  { 'mbbill/undotree' },
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
