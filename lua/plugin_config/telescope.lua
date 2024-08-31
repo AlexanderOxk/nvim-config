@@ -1,12 +1,37 @@
 require('telescope').setup {
-  defaults = {
-    mappings = {
-      n = {
-        ['<C-d>'] = require('telescope.actions').delete_buffer,
+  pickers = {
+    buffers = {
+      mappings = {
+        n = {
+          ['<C-d>'] = require('telescope.actions').delete_buffer,
+        },
+        i = {
+          ['<C-d>'] = require('telescope.actions').delete_buffer,
+        },
       },
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = require('telescope.actions').delete_buffer,
+    },
+    git_bcommits = {
+      mappings = {
+        n = {
+          ["<CR>"] = function(prompt_bufnr)
+            local actions = require("telescope.actions")
+            local actions_state = require("telescope.actions.state")
+            local hash = actions_state.get_selected_entry().value
+
+            actions.close(prompt_bufnr)
+            vim.cmd("Gedit ".. hash .. ":%")
+          end
+        },
+        i = {
+          ["<CR>"] = function(prompt_bufnr)
+            local actions = require("telescope.actions")
+            local actions_state = require("telescope.actions.state")
+            local hash = actions_state.get_selected_entry().value
+
+            actions.close(prompt_bufnr)
+            vim.cmd("Gedit ".. hash .. ":%")
+          end
+        },
       },
     },
   },
@@ -86,4 +111,5 @@ vim.keymap.set('n', '<leader>pw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>pg', ':LiveGrepGitRoot<cr>', { desc = '[pg] Search by grep on Git Root' })
 vim.keymap.set('n', '<leader>pd', require('telescope.builtin').diagnostics, { desc = '[pd] Search diagnostics' })
 vim.keymap.set('n', '<leader>pr', require('telescope.builtin').resume, { desc = '[pr] Search resume' })
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').git_bcommits, { desc = '[fh] Git file history' })
 --vim.keymap.set('n', '<leader>pg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
