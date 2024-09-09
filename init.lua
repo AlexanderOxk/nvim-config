@@ -28,7 +28,7 @@ require("lazy").setup({
   {
     'stevearc/oil.nvim',
     lazy = false,
-    priority = 10000,
+    priority = 1000,
     opts = {},
   },
   { 'lewis6991/gitsigns.nvim' },
@@ -43,6 +43,7 @@ require("lazy").setup({
         component_separators = '|',
         section_separators = '',
       },
+      extensions = { "fugitive", "oil", "quickfix" },
     },
   },
   {
@@ -120,6 +121,4 @@ require("lazy").setup({
 require("plugin_config")
 vim.cmd 'colorscheme material'
 require("lsp_config")
-require("oil").setup()
-require("ibl").setup()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/submodules/friendly-snippets" } })
