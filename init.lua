@@ -33,6 +33,7 @@ require("lazy").setup({
   },
   { 'lewis6991/gitsigns.nvim' },
   { 'tpope/vim-fugitive' },
+  { 'sindrets/diffview.nvim' },
   { 'pocco81/auto-save.nvim' },
   {
     'nvim-lualine/lualine.nvim',
