@@ -21,9 +21,10 @@ vim.opt.rtp:prepend(lazypath)
 -- Specify plugins
 require("lazy").setup({
   {
-    'marko-cerovac/material.nvim',
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
-    priority = 10000,
+    priority = 10000
   },
   {
     'stevearc/oil.nvim',
@@ -40,7 +41,7 @@ require("lazy").setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'material',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },
@@ -120,6 +121,5 @@ require("lazy").setup({
 
 -- Configure plugins
 require("plugin_config")
-vim.cmd 'colorscheme material'
 require("lsp_config")
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/submodules/friendly-snippets" } })

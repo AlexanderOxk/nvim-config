@@ -1,78 +1,76 @@
-vim.g.material_style = "darker"
-
-require('material').setup({
-
-  contrast = {
-    terminal = false,                -- Enable contrast for the built-in terminal
-    sidebars = false,                -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-    floating_windows = false,        -- Enable contrast for floating windows
-    cursor_line = false,             -- Enable darker background for the cursor line
-    non_current_windows = false,     -- Enable contrasted background for non-current windows
-    filetypes = {},                  -- Specify which filetypes get the contrasted (darker) background
+require("catppuccin").setup({
+  flavour = "frappe",   -- latte, frappe, macchiato, mocha
+  background = {       -- :h background
+    light = "latte",
+    dark = "mocha",
   },
-
-  styles = {   -- Give comments style such as bold, italic, underline etc.
-    comments = { --[[ italic = true ]] },
-    strings = { --[[ bold = true ]] },
-    keywords = { --[[ underline = true ]] },
-    functions = { --[[ bold = true, undercurl = true ]] },
+  transparent_background = false,   -- disables setting the background color.
+  show_end_of_buffer = false,       -- shows the '~' characters after the end of buffers
+  term_colors = false,              -- sets terminal colors (e.g. `g:terminal_color_0`)
+  dim_inactive = {
+    enabled = true,                 -- dims the background color of inactive window
+    shade = "dark",
+    percentage = 0.15,              -- percentage of the shade to apply to the inactive window
+  },
+  no_italic = false,                -- Force no italic
+  no_bold = false,                  -- Force no bold
+  no_underline = false,             -- Force no underline
+  styles = {                        -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { "italic" },        -- Change the style of comments
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
     variables = {},
-    operators = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
     types = {},
+    operators = {},
+    -- miscs = {}, -- Uncomment to turn off hard-coded styles
   },
-
-  plugins = {   -- Uncomment the plugins that you use to highlight them
-    -- Available plugins:
-    -- "dap",
-    -- "dashboard",
-    -- "eyeliner",
-    -- "fidget"
-    -- "flash"
-    "gitsigns",
-    -- "harpoon",
-    -- "hop",
-    -- "illuminate",
-    "indent-blankline",
-    -- "lspsaga",
-    -- "mini",
-    -- "neogit",
-    -- "neotest",
-    -- "neorg",
-    -- "noice"
-    "nvim-cmp",
-    -- "nvim-navic",
-    -- "nvim-tree",
-    -- "nvim-web-devicons",
-    -- "rainbow-delimiters",
-    -- "sneak",
-    "telescope",
-    -- "trouble",
-    "which-key",
+  color_overrides = {},
+  custom_highlights = {},
+  default_integrations = false,
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    treesitter = true,
+    diffview = true,
+    mason = true,
+    which_key = true,
+    telescope = {
+      enabled = true,
+    },
+    indent_blankline = {
+      enabled = true,
+      scope_color = "lavender",
+      colored_indent_levels = false,
+    },
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+        ok = { "italic" },
+      },
+      underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+        ok = { "underline" },
+      },
+      inlay_hints = {
+        background = true,
+      },
+    },
+    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
-
-  disable = {
-    colored_cursor = true,     -- Disable the colored cursor
-    borders = false,            -- Disable borders between verticaly split windows
-    background = false,         -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
-    term_colors = false,        -- Prevent the theme from setting terminal colors
-    eob_lines = false           -- Hide the end-of-buffer lines
-  },
-
-  high_visibility = {
-    lighter = false,     -- Enable higher contrast text for lighter style
-    darker = false       -- Enable higher contrast text for darker style
-  },
-
-  lualine_style = "default",   -- Lualine style ( can be 'stealth' or 'default' )
-
-  async_loading = true,        -- Load parts of the theme asyncronously for faster startup (turned on by default)
-
-  -- Custom colors must be a function that takes in the default colors table as
-  -- a paramter, and then modifies them.
-  -- To see the available colors, see lua/material/colors/init.lua
-  custom_colors = function(colors)
-    colors.syntax.variable = colors.main.red
-  end,
-
-  custom_highlights = {},   -- Overwrite highlights with your own
 })
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
