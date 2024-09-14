@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Specify plugins
 require("lazy").setup({
   {
-    "catppuccin/nvim",
+    "AlexanderOxk/catppuccin",
     name = "catppuccin",
     lazy = false,
     priority = 10000

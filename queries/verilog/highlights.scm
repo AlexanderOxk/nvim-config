@@ -149,6 +149,8 @@
 (port_identifier
  (simple_identifier) @variable)
 
+(implicit_class_handle) @variable.builtin
+
 [
   (net_type)
   (integer_vector_type)
