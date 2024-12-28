@@ -71,7 +71,7 @@ local servers = {
     },
   },
   cmake = {
-    filetypes = {"cmake", "CMakeLists.txt"},
+    filetypes = { "cmake", "CMakeLists.txt" },
   },
 }
 
@@ -99,3 +99,16 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Configure LSP for godot without mason since it interfaces directly with godot
+require("lspconfig")["gdscript"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+})
+
+local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+if gdproject then
+  io.close(gdproject)
+  vim.fn.serverstart '/tmp/godot.pipe'
+end
