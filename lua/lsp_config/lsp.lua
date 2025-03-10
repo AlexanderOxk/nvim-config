@@ -62,6 +62,11 @@ local servers = {
     "clangd",
     "--header-insertion=never"
   },
+  cssls = {},
+  html = {
+    filetypes = {"html", "php"},
+  },
+  phpactor = {},
   pyright = {},
   rust_analyzer = {},
   lua_ls = {
