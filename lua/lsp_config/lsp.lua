@@ -60,7 +60,9 @@ local servers = {
   bashls = {},
   clangd = {
     "clangd",
-    "--header-insertion=never"
+    "--header-insertion=iwyu",
+    "--clang-tidy",
+    "--enable-config"
   },
   cssls = {},
   html = {
@@ -68,7 +70,6 @@ local servers = {
   },
   phpactor = {},
   pyright = {},
-  rust_analyzer = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
