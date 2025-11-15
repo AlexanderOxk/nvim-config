@@ -25,15 +25,8 @@ keymap("n", "<C-Down>", ":resize +5<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<M-d>", ":bnext<CR>", opts)
-keymap("n", "<M-a>", ":bprevious<CR>", opts)
-
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
--- Close buffers
-keymap("n", "<M-q>", "<cmd>bdelete<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)

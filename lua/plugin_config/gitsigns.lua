@@ -39,26 +39,5 @@ require("gitsigns").setup {
     vim.keymap.set('n', '[[', move_prev_hunk, { buffer = bufnr, desc = 'Previous git hunk' })
     vim.keymap.set('n', 'gb', require('gitsigns').blame_line,
       { buffer = bufnr, desc = 'Show git blame for line' })
-
-    -- don't override the built-in and fugitive keymaps
-    -- local gs = package.loaded.gitsigns
-    -- vim.keymap.set({ 'n', 'v' }, '<leader>gn', function()
-    --   if vim.wo.diff then
-    --     return ']c'
-    --   end
-    --   vim.schedule(function()
-    --     gs.next_hunk()
-    --   end)
-    --   return '<Ignore>'
-    -- end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
-    -- vim.keymap.set({ 'n', 'v' }, '<leader>gp', function()
-    --   if vim.wo.diff then
-    --     return '[c'
-    --   end
-    --   vim.schedule(function()
-    --     gs.prev_hunk()
-    --   end)
-    --   return '<Ignore>'
-    -- end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
   end,
 }

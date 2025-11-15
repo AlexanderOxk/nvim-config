@@ -25,11 +25,5 @@ vim.o.softtabstop = 4
 vim.o.splitright = true
 vim.o.termguicolors = true
 vim.o.undofile = true
-vim.opt.list = true
-vim.opt.listchars:append('trail: ')
 vim.o.syntax = "on"
 vim.o.updatetime = 300
-vim.g.netrw_bufsettings = 'noma nomod rnu nowrap ro nobl'
-
-vim.cmd('highlight WhitespaceEOL ctermbg=red ctermfg=white guibg=#ff2929')
-vim.fn.matchadd('WhitespaceEOL', [[\s\+$]])
