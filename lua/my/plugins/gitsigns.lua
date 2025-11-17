@@ -24,7 +24,7 @@ return {
                 if vim.wo.diff then
                     vim.api.nvim_feedkeys("]c", "n", true)
                 else
-                    gs.nav_hunk({ dir })
+                    gs.nav_hunk(dir)
                 end
             end
             local move_next_hunk = function() move_hunk('next') end

@@ -30,10 +30,14 @@ return {
                     },
                 },
             },
+            extensions = {
+                fzf = {}
+            }
         }
 
         -- Enable telescope fzf native, if installed
-        pcall(require('telescope').load_extension, 'fzf')
+        require('telescope').load_extension('fzf')
+
         local builtin = require("telescope.builtin")
 
         -- Telescope live_grep in git root
