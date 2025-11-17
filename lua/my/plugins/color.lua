@@ -1,5 +1,5 @@
 return {
-    "AlexanderOxk/catppuccin",
+    "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
     priority = 10000,
