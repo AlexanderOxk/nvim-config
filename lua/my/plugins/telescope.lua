@@ -17,6 +17,12 @@ return {
 
     config = function()
         require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = { ["<C-h>"] = "which_key" }
+                },
+                layout_config = { height = 0.9, width = 0.95 },
+            },
             pickers = {
                 buffers = {
                     -- For buffer picker, use <C-d> to close a buffer
@@ -56,6 +62,7 @@ return {
 
         vim.api.nvim_create_user_command('FindGitFilesOrFiles', find_git_files_or_files, {})
 
+        vim.keymap.set('n', '<leader>z', builtin.spell_suggest, { desc = '[z] Spelling suggestion' })
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
         vim.keymap.set('n', '<leader>/', function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.

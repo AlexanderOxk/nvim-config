@@ -13,7 +13,7 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Lua execution and file sourceing
+-- Lua execution and file sourcing
 keymap("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "Source current file" })
 keymap("n", "<leader>x", ":.lua<CR>", { desc = "Execute current line" })
 keymap("v", "<leader>x", ":lua<CR>", { desc = "Execute current selection" })
@@ -33,6 +33,13 @@ keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+
+-- Toggle spell
+local function toggle_spell_check()
+    ---@diagnostic disable-next-line: undefined-field
+    vim.opt.spell = not (vim.opt.spell:get())
+end
+keymap("n", "<leader><space>s", toggle_spell_check, { desc = "Toggle spelling" })
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
