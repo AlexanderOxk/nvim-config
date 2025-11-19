@@ -5,7 +5,6 @@ return {
         local opts = { noremap = true, silent = true }
 
         ls.setup()
-        require('luasnip.loaders.from_vscode').lazy_load()
         require("luasnip.loaders.from_vscode").lazy_load({
             paths = { vim.fn.stdpath("config") .. "/submodules/friendly-snippets" }
         })
