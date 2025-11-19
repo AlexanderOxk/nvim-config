@@ -13,8 +13,14 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Lua execution and file sourceing
+keymap("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "Source current file" })
+keymap("n", "<leader>x", ":.lua<CR>", { desc = "Execute current line" })
+keymap("v", "<leader>x", ":lua<CR>", { desc = "Execute current selection" })
+
 -- File navigation
 keymap("n", "<leader>n", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Undo tree
 keymap("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "Open undo tree" })

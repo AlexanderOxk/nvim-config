@@ -57,7 +57,6 @@ return {
         vim.api.nvim_create_user_command('FindGitFilesOrFiles', find_git_files_or_files, {})
 
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-        vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
         vim.keymap.set('n', '<leader>/', function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
             builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -73,6 +72,7 @@ return {
         vim.keymap.set('n', '<leader>pw', builtin.grep_string, { desc = '[pw] Search current word' })
         vim.keymap.set('n', '<leader>pd', builtin.diagnostics, { desc = '[pd] Search diagnostics' })
         vim.keymap.set('n', '<leader>pr', builtin.resume, { desc = '[pr] Search resume' })
+        vim.keymap.set('n', '<leader>pb', builtin.buffers, { desc = '[pb] Find existing buffers' })
 
         -- Custom pickers
         vim.keymap.set("n", "<leader>pg", require("my.telescope.multigrep").live_multigrep, { desc = "[pg] Multi Grep" })
