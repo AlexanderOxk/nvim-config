@@ -27,3 +27,4 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.syntax = "on"
 vim.o.updatetime = 300
+vim.o.list = true
