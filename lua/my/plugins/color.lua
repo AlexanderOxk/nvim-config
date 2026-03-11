@@ -95,5 +95,11 @@ return {
 
         -- setup must be called before loading
         vim.cmd.colorscheme("catppuccin")
+
+        -- Syntax overrides
+        local colors = require("catppuccin.palettes").get_palette("mocha")
+
+        -- General
+        vim.api.nvim_set_hl(0, "@variable", { fg = colors.rosewater })
     end
 }
