@@ -55,3 +55,9 @@ keymap("n", "N", "Nzz", opts)
 
 -- Substitute word under cursor
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", opts)
+
+-- Toggle diagnostic messages
+keymap("n", "gk", function ()
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle diagnostic messages" })
