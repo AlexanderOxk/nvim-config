@@ -61,9 +61,6 @@ vim.lsp.enable({
     "cmake",
 })
 
-require('lazydev').setup()
-
-
 local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
 if gdproject then
     io.close(gdproject)

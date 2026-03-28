@@ -27,25 +27,22 @@ M.live_multigrep = function(opts)
                 table.insert(args, pieces[2])
             end
 
-            return vim.tbl_flatten({
-                args,
-                {
-                    "--color=never",
-                    "--no-heading",
-                    "--with-filename",
-                    "--line-number",
-                    "--column",
-                    "--smart-case",
-                }
+            return vim.list_extend(args, {
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
             })
         end,
 
         entry_maker = make_entry.gen_from_vimgrep(opts),
         cwd = opts.cwd,
+        debounce = 400,
     })
 
     pickers.new(opts, {
-        debounce = 250,
         prompt_title = "Multi Grep (" .. opts.cwd .. ")",
         finder = finder,
         previewer = conf.grep_previewer(opts),

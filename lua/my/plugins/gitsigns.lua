@@ -22,7 +22,7 @@ return {
             local gs = require("gitsigns")
             local move_hunk = function(dir)
                 if vim.wo.diff then
-                    vim.api.nvim_feedkeys("]c", "n", true)
+                    vim.api.nvim_feedkeys(dir == "next" and "]c" or "[c", "n", true)
                 else
                     gs.nav_hunk(dir)
                 end
