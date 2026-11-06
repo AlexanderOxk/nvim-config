@@ -2,3 +2,4 @@
 require("my.core")
 require("my.lazy")
 require("my.lsp")
+require("my.godot")
