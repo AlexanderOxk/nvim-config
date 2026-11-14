@@ -57,6 +57,7 @@ vim.lsp.enable({
     "html",
     "phpactor",
     "pyright",
+    "rust_analyzer",
     "lua_ls",
     "cmake",
     "gdscript",
