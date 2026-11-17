@@ -1,3 +1,12 @@
+-- Append .venv/bin to path if there is a python .venv in the project
+local git_root = vim.fs.root(0, ".git")
+local stop_dir = git_root and vim.fs.dirname(git_root) or nil
+local venv = vim.fs.find(".venv", { upward = true, type = "directory", stop = stop_dir })[1]
+if venv then
+    vim.env.VIRTUAL_ENV = venv
+    vim.env.PATH = venv .. "/bin:" .. vim.env.PATH
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
@@ -56,10 +65,10 @@ vim.lsp.enable({
     "cssls",
     "html",
     "phpactor",
-    "pyright",
+    "basedpyright",
+    "ruff", -- Python formatter
     "rust_analyzer",
     "lua_ls",
     "cmake",
     "gdscript",
 })
-

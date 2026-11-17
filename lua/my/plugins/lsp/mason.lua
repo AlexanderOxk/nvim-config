@@ -8,7 +8,7 @@ return {
             "cssls",
             "html",
             "phpactor",
-            "pyright",
+            "basedpyright",
             "lua_ls",
             "cmake",
         },
